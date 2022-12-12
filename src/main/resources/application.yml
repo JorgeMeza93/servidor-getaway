@@ -14,7 +14,7 @@ spring:
               cookieNombre: usuario
               cookieValor: JorgeMeza
       - id: servicio-items
-        uri: lb://servicio-items
+        uri: lb://servicio-item
         predicates:
           - Path=/api/items/**
         filters:
