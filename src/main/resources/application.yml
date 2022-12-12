@@ -8,10 +8,22 @@ spring:
           - Path=/api/productos/**
         filters:
           - StripPrefix=2
+          - name: Ejemplo
+            args:
+              mensaje: Hola, mi mensaje personalizado
+              cookieNombre: usuario
+              cookieValor: JorgeMeza
       - id: servicio-items
         uri: lb://servicio-items
         predicates:
           - Path=/api/items/**
         filters:
-          - StripPrefix=2     
+          - StripPrefix=2
+          - AddRequestHeader=token-request, 123456
+          - AddResponseHeader=token-response, 1234567
+          - AddRequestParameter=nombre, jorge
+          
+          
+          
+               
           
