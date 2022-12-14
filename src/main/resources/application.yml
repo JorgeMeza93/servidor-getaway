@@ -6,6 +6,9 @@ spring:
         uri: lb://servicio-productos
         predicates:
           - Path=/api/productos/**
+    
+          - Method=GET, POST
+          - 
         filters:
           - StripPrefix=2
           - name: Ejemplo
